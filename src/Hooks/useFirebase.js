@@ -18,10 +18,13 @@ const useFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
 
     useEffect(() => {
-        const user = JSON.parse(sessionStorage.user);
-        console.log("Session User:", user);
+        let sessionUser;
+        if (sessionStorage.user) {
+            sessionUser = JSON.parse(sessionStorage.user);
+        }
+        console.log("Session User:", sessionUser);
         if (user.email) {
-            setUser(user);
+            setUser(sessionUser);
         }
     }, []);
 
