@@ -7,7 +7,7 @@ import Doctor from './Doctor/Doctor';
 
 const Dashboard = () => {
 
-    const { user } = useAuth();
+    const { user, token } = useAuth();
 
     const [role, setRole] = useState('');
 
@@ -53,7 +53,7 @@ const Dashboard = () => {
             }
             {
                 role === 'patient' &&
-                <Patient data={data} />
+                <Patient data={data} token={token} />
             }
             {
                 role === 'doctor' &&
