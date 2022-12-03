@@ -65,9 +65,8 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || "/";
                 console.log("Login User", userCredential.user);
-                console.log("destination: ", destination);
+                console.log("destination: ", location);
                 setUser(userCredential.user);
 
                 sessionStorage.setItem("user", JSON.stringify(userCredential.user));
@@ -77,7 +76,8 @@ const useFirebase = () => {
                 //     setUser({});
                 // }
                 coolAlert.success('Logged In!');
-                navigate('/dashboard');
+                const from = location.state?.from || "/";
+                navigate(from, { replace: true });
                 setAuthError("");
             })
             .catch((error) => {

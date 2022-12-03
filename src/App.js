@@ -15,6 +15,8 @@ import { positions, Provider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import Dashboard from './Pages/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute';
+import Appoinment from './Pages/Home/Appoinment/Appoinment';
+import Doctors from './Pages/Home/Doctors/Doctors';
 
 const options = {
   timeout: 5000,
@@ -34,7 +36,7 @@ function App() {
               <Route path='/home' element={<Home />} />
               <Route path='/about' element={<About />} />
               <Route path='/service' element={<Service />} />
-              <Route path='/dentist' element={<Dentist />} />
+              <Route path='/doctors' element={<Dentist />} />
               <Route path='/dashboard'
                 element={
                   <PrivateRoute >
@@ -42,6 +44,16 @@ function App() {
                   </PrivateRoute>
                 }
               />
+
+              <Route path='/appointment/:id'
+                element={
+                  <PrivateRoute >
+                    <Appoinment />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route path='/doctors/:id' element={<Doctors />} />
 
               <Route path='/contact' element={<Contact />} />
               <Route path='/approved' element={<Approved />} />

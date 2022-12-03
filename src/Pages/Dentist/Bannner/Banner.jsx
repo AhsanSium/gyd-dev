@@ -12,14 +12,14 @@ const Banner = () => {
                 <Row className="align-items-center">
                     <Col md={6} lg={6} sm={12}>
                         <div className="section-title">
-                            <h1>Dr. Nathan Currie</h1>
+                            <h1>Please select a speciality</h1>
                         </div>
-                        <div className="breadcrumb-nav">
+                        {/* <div className="breadcrumb-nav">
                             <a href="/" className="text-decoration-none text-white">Home Page</a>
                             <span href="/" className="text-decoration-none text-white ml-2">Dr. Nathan Currie</span>
-                        </div>
+                        </div> */}
                     </Col>
-                    <Col md={6} lg={6} sm={12}>
+                    {/* <Col md={6} lg={6} sm={12}>
                         <div className="hero-slide-right text-start">
                             <div className="banner-animate">
                                 <img src={HeroMainbg} alt="" className="img-fluid" />
@@ -29,7 +29,7 @@ const Banner = () => {
                                 <img src={injectTool} alt="" className="img-fluid a5" />
                             </div>
                         </div>
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </section>

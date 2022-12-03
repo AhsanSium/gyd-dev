@@ -135,8 +135,14 @@ const Register = () => {
 
                             <div className="form-outline mb-4">
                                 <small>Doctor Specialist In</small>
-                                <input name='doctorSpecialist' onChange={handleChange} type="text" id="form2Example22" className="form-control"
-                                    placeholder="Specialist In" required />
+                                <select className="form-control" name='doctorSpecialist' onChange={handleChange} id="form2Example22" placeholder="Specialist In" required>
+                                    <option value="medicine">Medicine</option>
+                                    <option value="skin">Skin</option>
+                                    <option value="eye">Eye</option>
+                                    <option value="heart">Heart</option>
+                                </select>
+                                {/* <input name='doctorSpecialist' onChange={handleChange} type="text" id="form2Example22" className="form-control"
+                                    placeholder="Specialist In" required /> */}
                             </div>
 
                             <div className="form-outline mb-4">

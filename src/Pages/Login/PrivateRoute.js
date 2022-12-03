@@ -1,6 +1,6 @@
 import Spinner from 'react-bootstrap/Spinner';
 import React from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { Route, Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 // const PrivateRoute = ({ children, ...rest }) => {
@@ -32,7 +32,8 @@ import useAuth from '../../Hooks/useAuth';
 // export default PrivateRoute;
 
 export default function PrivateRoute({ children }) {
+    const location = useLocation();
     const { user } = useAuth();
     console.log("children:", children, "USer: ", user.email);
-    return user.email ? children : <Navigate to="/login" />;
+    return user.email ? children : <Navigate to="/login" state={{ from: location }} />;
 }
