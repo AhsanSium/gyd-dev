@@ -32,6 +32,7 @@ const Header = () => {
                             <Link to="/about" className='list-item text-decoration-none'>About</Link>
                             {/* <Link to="/service" className='list-item text-decoration-none'>Service</Link> */}
                             <Link to="/doctors" className='list-item text-decoration-none'>Doctors</Link>
+                            <Link to="/online-consultancy" className='list-item text-decoration-none'>Consultancy</Link>
                             <Link to="/contact" className='list-item text-decoration-none'>Contact</Link>
                             {user.email
                                 ?

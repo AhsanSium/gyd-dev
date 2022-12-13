@@ -3,19 +3,10 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import doctorImage from "../../../Images/doctorIcon.png";
 import './Details.css';
-import { Rating } from 'react-simple-star-rating'
 
-const Details = () => {
+const OnlineDocDetails = () => {
 
     const [users, setUsers] = useState([]);
-    const [rating, setRating] = useState(5);
-
-    // Catch Rating value
-    const handleRating = (rate) => {
-        setRating(rate)
-
-        // other logic
-    }
 
     useEffect(() => {
 
@@ -48,32 +39,25 @@ const Details = () => {
                                     return (
 
                                         <Col>
-                                            <Card className='p-4'>
-                                                <div>
-                                                    <Link style={{ textDecoration: 'none' }} to={`/doctors/${singleUser.doctorSpecialist
-                                                        }`} >
+                                            <Link style={{ textDecoration: 'none' }} to={`/online-consultancy/${singleUser.doctorSpecialist
+                                                }`} >
+                                                <Card className='p-4'>
+                                                    <div>
                                                         <Card.Img
                                                             style={{ width: '10rem' }}
 
                                                             variant="top" src={doctorImage} />
 
-                                                    </Link>
-                                                </div>
-                                                <Card.Body>
-                                                    <Link style={{ textDecoration: 'none' }} to={`/doctors/${singleUser.doctorSpecialist
-                                                        }`} >
+                                                    </div>
+                                                    <Card.Body>
                                                         <Card.Title>{singleUser.doctorSpecialist.toUpperCase()}</Card.Title>
                                                         {/* <Card.Text>
                                                             Doctor Name:
                                                             {"  " + singleUser.doctorName}
                                                         </Card.Text> */}
-                                                    </Link>
-                                                </Card.Body>
-                                                <Card.Footer>
-                                                    <Rating
-                                                        onClick={handleRating} />
-                                                </Card.Footer>
-                                            </Card>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Link>
                                         </Col>
                                     )
                                 }
@@ -106,4 +90,4 @@ const Details = () => {
     );
 };
 
-export default Details;
+export default OnlineDocDetails;

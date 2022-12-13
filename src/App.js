@@ -17,6 +17,9 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute';
 import Appoinment from './Pages/Home/Appoinment/Appoinment';
 import Doctors from './Pages/Home/Doctors/Doctors';
+import OnlineDocDetails from './Pages/Dentist/Details/OnlineDocDetails';
+import OnlineDoctors from './Pages/Home/Doctors/OnlineDoctors';
+import OnlineConsultency from './Pages/Home/Appoinment/OnlineConsultancy';
 
 const options = {
   timeout: 5000,
@@ -37,6 +40,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/service' element={<Service />} />
               <Route path='/doctors' element={<Dentist />} />
+              <Route path='/online-consultancy' element={<OnlineDocDetails />} />
               <Route path='/dashboard'
                 element={
                   <PrivateRoute >
@@ -53,7 +57,16 @@ function App() {
                 }
               />
 
+              <Route path='/online-consultancy/doctor/:id'
+                element={
+                  <PrivateRoute >
+                    < OnlineConsultency />
+                  </PrivateRoute>
+                }
+              />
+
               <Route path='/doctors/:id' element={<Doctors />} />
+              <Route path='/online-consultancy/:id' element={<OnlineDoctors />} />
 
               <Route path='/contact' element={<Contact />} />
               <Route path='/approved' element={<Approved />} />

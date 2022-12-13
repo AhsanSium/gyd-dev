@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import VideoChatMain from '../../../components/VideoChat/VideoChatMain';
 import './Content.css';
 
 const Content = () => {
@@ -8,6 +9,7 @@ const Content = () => {
             <Container>
                 <Row>
                     <Col md={12} lg={8} lg={{ order: 2 }} className="text-center">
+                        {/* <VideoChatMain /> */}
                         <div className="section-title">
                             <h1>Our Dental Practice</h1>
                         </div>

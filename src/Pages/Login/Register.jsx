@@ -161,6 +161,12 @@ const Register = () => {
                             </div>
 
                             <div className="form-outline mb-4">
+                                <small>Patient Image</small>
+                                <input name="patientImage" onChange={handleChange} type="file" accept="image/*" id="form2Example41" alt='' className="form-control"
+                                    placeholder="Patient Image" required />
+                            </div>
+
+                            <div className="form-outline mb-4">
                                 <small>Patient Illness</small>
                                 <input name="patientIllness" onChange={handleChange} type="text" id="form2Example32" className="form-control"
                                     placeholder="Illness" required />
@@ -170,6 +176,32 @@ const Register = () => {
                                 <small>Patient Age</small>
                                 <input name="patientAge" onChange={handleChange} type="text" id="form2Example33" className="form-control"
                                     placeholder="Age" required />
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <small>Patient Gender</small>
+                                <select className="form-control" name='patientGender' onChange={handleChange} id="form2Example22" placeholder="Gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <small>Patient Weight</small>
+                                <input name="patientWeight" onChange={handleChange} type="number" id="form2Example53" className="form-control"
+                                    placeholder="Weight" required />
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <small>Patient Height </small>
+                                <input name="patientHeight" onChange={handleChange} type="number" id="form2Example53" className="form-control"
+                                    placeholder="Height" required />
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <small>Patient BMI</small>
+                                <input name="patientBMI" onChange={handleChange} type="number" id="form2Example63" className="form-control"
+                                    placeholder="BMI" required />
                             </div>
 
                             <div className="form-outline mb-4">
