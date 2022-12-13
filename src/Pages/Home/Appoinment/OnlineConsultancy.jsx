@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useAlert } from 'react-alert';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import VideoChatMain from '../../../components/VideoChat/VideoChatMain';
 import useAuth from '../../../Hooks/useAuth';
 import './Appoinment.css';
 
@@ -124,8 +125,10 @@ const OnlineConsultency = () => {
                 <p>Specialist: {doctor.doctorSpecialist
                 }</p>
             </Container>
-            <Container>
-
+            <Container className='w-100 shadow-lg p-5'>
+                <h4>Video Chat Feature</h4>
+                <small>coming soon</small>
+                <VideoChatMain />
             </Container>
             <Container>
                 <Row>

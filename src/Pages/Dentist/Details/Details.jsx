@@ -3,7 +3,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import doctorImage from "../../../Images/doctorIcon.png";
 import './Details.css';
-import { Rating } from 'react-simple-star-rating'
+import { Rating } from 'react-simple-star-rating';
 
 const Details = () => {
 
@@ -48,7 +48,7 @@ const Details = () => {
                                     return (
 
                                         <Col>
-                                            <Card className='p-4'>
+                                            <Card className='p-4 shadow-lg' data-aos="flip-left">
                                                 <div>
                                                     <Link style={{ textDecoration: 'none' }} to={`/doctors/${singleUser.doctorSpecialist
                                                         }`} >
@@ -69,10 +69,7 @@ const Details = () => {
                                                         </Card.Text> */}
                                                     </Link>
                                                 </Card.Body>
-                                                <Card.Footer>
-                                                    <Rating
-                                                        onClick={handleRating} />
-                                                </Card.Footer>
+
                                             </Card>
                                         </Col>
                                     )

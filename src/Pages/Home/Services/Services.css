@@ -24,10 +24,28 @@
     text-align: center;
 }
 
+.single-service-box1 {
+    border: 1px solid #3672bc;
+    border-radius: 5px;
+    padding: 60px 47px 70px;
+    margin-top: 30px;
+    transition: .5s;
+    background: transparent;
+    text-align: center;
+
+}
+
 .single-service-box:hover {
     background: #1259b0;
     cursor: cell;
     border-color: transparent;
+}
+
+.single-service-box1:hover {
+    background: #1259b0;
+    cursor: cell;
+    border-color: transparent;
+    color: white;
 }
 
 .service-icon {
@@ -42,7 +60,7 @@
 }
 
 .single-service-box p {
-    color: #d7d3d3!important;
+    color: #d7d3d3 !important;
     font-family: 'Roboto Slab', serif;
 }
 

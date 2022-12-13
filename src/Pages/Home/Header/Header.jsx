@@ -30,6 +30,7 @@ const Header = () => {
                         <Nav className="ms-auto align-items-center">
                             <Link to="/home" className='list-item text-decoration-none'>Home</Link>
                             <Link to="/about" className='list-item text-decoration-none'>About</Link>
+                            <Link to="/hospitals" className='list-item text-decoration-none'>Hospitals</Link>
                             {/* <Link to="/service" className='list-item text-decoration-none'>Service</Link> */}
                             <Link to="/doctors" className='list-item text-decoration-none'>Doctors</Link>
                             <Link to="/online-consultancy" className='list-item text-decoration-none'>Consultancy</Link>

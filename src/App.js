@@ -20,6 +20,7 @@ import Doctors from './Pages/Home/Doctors/Doctors';
 import OnlineDocDetails from './Pages/Dentist/Details/OnlineDocDetails';
 import OnlineDoctors from './Pages/Home/Doctors/OnlineDoctors';
 import OnlineConsultency from './Pages/Home/Appoinment/OnlineConsultancy';
+import Hospital from './Pages/Hospital/Hospital';
 
 const options = {
   timeout: 5000,
@@ -40,6 +41,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/service' element={<Service />} />
               <Route path='/doctors' element={<Dentist />} />
+              <Route path='/hospitals' element={<Hospital />} />
               <Route path='/online-consultancy' element={<OnlineDocDetails />} />
               <Route path='/dashboard'
                 element={

@@ -31,6 +31,11 @@ const OnlineDocDetails = () => {
         <>
             <section className="dentist-details-sec">
                 <Container>
+
+                    <div className="expertDentist-txt mt-5 mb-4 mt-lg-0">
+                        <h2>Specialists For Online Consultancy</h2>
+                    </div>
+
                     <Row xs={1} md={2} className="g-4">
                         {
                             users.length > 0 ? users.map((singleUser) => {

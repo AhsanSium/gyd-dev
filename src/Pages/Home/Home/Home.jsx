@@ -15,17 +15,17 @@ const Home = () => {
 
     return (
         <>
-           <Banner />
-           <Feature />
-           <About />
-           <Service />
-           <Dentist />
+            <Banner />
+            <Feature />
+            <About />
+            {/* <Service /> */}
+            {/* <Dentist />
            <Appoinment />
            <Gallery />
            <Testimonial />
            <LatestBlog />
            <Promo />
-           <Slick />
+           <Slick /> */}
         </>
     );
 };
