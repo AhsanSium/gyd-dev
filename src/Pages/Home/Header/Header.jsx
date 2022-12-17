@@ -41,7 +41,11 @@ const Header = () => {
                                 :
                                 <Link to="/login" type="button" className="btn btn-danger">Login</Link>
                             }
-                            {user.email &&
+                            {user.email && user.email === 'admin@getyourdoctor.com' ?
+                                <Link style={{ textDecoration: 'none' }} to='/admin' title='Dashboard'>
+                                    <Navbar.Text><FontAwesomeIcon icon={faUser} /><span className="userName">{user.displayName}</span></Navbar.Text>
+                                </Link>
+                                :
                                 <Link style={{ textDecoration: 'none' }} to='/dashboard' title='Dashboard'>
                                     <Navbar.Text><FontAwesomeIcon icon={faUser} /><span className="userName">{user.displayName}</span></Navbar.Text>
                                 </Link>

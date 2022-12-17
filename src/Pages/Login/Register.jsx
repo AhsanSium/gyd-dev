@@ -14,6 +14,8 @@ const Register = () => {
         doctorName: '',
         doctorSpecialist: '',
         doctorDegree: '',
+        doctorsHospital: '',
+        visitHours: '',
         email: '',
         password: ''
     });
@@ -140,6 +142,10 @@ const Register = () => {
                                     <option value="skin">Skin</option>
                                     <option value="eye">Eye</option>
                                     <option value="heart">Heart</option>
+                                    <option value="kidney">Kidney</option>
+                                    <option value="brain">Brain</option>
+                                    <option value="nutrition">Nutrition</option>
+                                    <option value="diabetes">Diabetes</option>
                                 </select>
                                 {/* <input name='doctorSpecialist' onChange={handleChange} type="text" id="form2Example22" className="form-control"
                                     placeholder="Specialist In" required /> */}
@@ -150,6 +156,30 @@ const Register = () => {
                                 <input name='doctorDegree' onChange={handleChange} type="text" id="form2Example23" className="form-control"
                                     placeholder="Doctor Degree" required />
                             </div>
+
+                            <div className="form-outline mb-4">
+                                <small>Doctor's Hospital</small>
+                                <select className="form-control" name='doctorsHospital' onChange={handleChange} id="form2Example72" placeholder="Visiting Hospitals" required>
+                                    <option value="dhaka-medical">Dhaka Medical</option>
+                                    <option value="popular-hospital">Popular Hospital</option>
+                                    <option value="medinova-hospital">Medinova Hospital</option>
+                                    <option value="labaid-hospital">Lab Aid Hospital</option>
+                                    <option value="bsmmu-hospital">BSMMU</option>
+                                    <option value="bardem-hospital">BARDEM</option>
+
+                                </select>
+                            </div>
+                            <div className="form-outline mb-4">
+                                <small>Visiting Hours</small>
+                                <select className="form-control" name='visitHours' onChange={handleChange} id="form2Example73" placeholder="Visit Hours" required>
+                                    <option value="10am-1pm">10 AM - 1 PM</option>
+                                    <option value="2pm-5pm">2 PM - 5 PM</option>
+                                    <option value="6pm-8pm">6 PM - 8 PM</option>
+                                    <option value="9pm-11pm">9 PM - 11 PM</option>
+
+                                </select>
+                            </div>
+
 
                         </div>
                         :

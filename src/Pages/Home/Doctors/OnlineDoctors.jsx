@@ -41,15 +41,33 @@ const Doctors = (props) => {
         AOS.refresh();
     }, []);
     ///online-consultancy/doctor/${singleUser._id}
+
+    const handleShortAtoZ = () => {
+
+        let array = [];
+        array = doctors;
+        array?.sort((a, b) => (a.doctorName > b.doctorName ? 1 : 1))
+        setDoctors(array);
+    }
+    const handleShortZtoA = () => {
+
+        let array = [];
+        array = doctors;
+        array?.sort((a, b) => (a.doctorName > b.doctorName ? -1 : 1));
+        let sortedArray = array.sort((a, b) => (a.doctorName?.toLowerCase() < b.doctorName?.toLowerCase()) ? 1 : ((b.doctorName?.toLowerCase() > a.doctorName?.toLowerCase()) ? -1 : 0));
+        console.log(sortedArray);
+        setDoctors(sortedArray);
+    }
+
     return (
         <div>
-            <h3 className="mb-5 mt-5">{id && id.toUpperCase()}  Specialist </h3>
+
             <Row xs={1} md={2} className="g-4">
 
-                <Col md='3'>
+                <Col md='3' className=''>
 
-                    <div className='h-full shadow-lg h-100 py-4 px-2'>
-                        <div>
+                    <div className='h-full shadow-lg h-100 py-4 px-2 '>
+                        <div className='mt-5 pt-5'>
                             <h3>Filters</h3>
                             <div className='mt-4'>
                                 <h5>Select Rating</h5>
@@ -64,6 +82,14 @@ const Doctors = (props) => {
                                     <div className='d-flex justify-center px-5 pt-2'>
                                         <input className='' type='checkbox' checked />
                                         <small className='ml-2'>Relevance (Default)</small>
+                                    </div>
+                                    <div className='d-flex justify-center px-5 pt-2'>
+                                        <input className='' type='checkbox' onChange={() => handleShortAtoZ()} />
+                                        <small className='ml-2'>Name (A to Z)</small>
+                                    </div>
+                                    <div className='d-flex justify-center px-5 pt-2'>
+                                        <input className='' type='checkbox' onChange={() => handleShortZtoA()} />
+                                        <small className='ml-2'>Name (Z to A)</small>
                                     </div>
                                     <div className='d-flex justify-center px-5 pt-2'>
                                         <input className='' type='checkbox' />
@@ -90,6 +116,7 @@ const Doctors = (props) => {
 
 
                 <Col md="9">
+                    <h3 className="mb-5 mt-5">{id && id.toUpperCase()}  Specialist </h3>
 
                     {
                         doctors.length > 0 ? doctors.map((singleUser) => {
@@ -99,7 +126,8 @@ const Doctors = (props) => {
 
                                     <Col>
                                         <div className="single-feature-box sigle-doctor">
-                                            <Link to={`/online-consultancy/doctor/${singleUser._id}`}>
+                                            <Link className='text-decoration-none' to={`/online-consultancy/doctor/${singleUser._id}`}>
+
                                                 <div className="doctors-profile" data-aos="fade-down">
                                                     <img style={{ width: '13rem' }} src={img} alt="" />
                                                 </div>
@@ -107,6 +135,22 @@ const Doctors = (props) => {
                                                     <h3 className="mb-0"><a href=".#">{singleUser.doctorName}</a></h3>
                                                     <span>Degree: {" " + singleUser.doctorDegree
                                                     }</span>
+                                                    <br />
+                                                    {
+                                                        singleUser.doctorsHospital && singleUser.doctorsHospital &&
+                                                        <span>
+                                                            Hospital: {"  " + singleUser.doctorsHospital.toUpperCase()
+                                                            }</span>
+                                                    }
+                                                    <br />
+                                                    <br />
+                                                    {
+                                                        singleUser.visitHours && singleUser.visitHours &&
+                                                        <span>
+                                                            Visiting Hours: {"  " + singleUser.visitHours.toUpperCase()
+                                                            }</span>
+                                                    }
+                                                    <br />
                                                 </div>
                                             </Link>
 

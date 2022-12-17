@@ -35,6 +35,14 @@
 
 }
 
+.single-service-box1 h3,
+h4 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 36px;
+}
+
 .single-service-box:hover {
     background: #1259b0;
     cursor: cell;
@@ -42,7 +50,7 @@
 }
 
 .single-service-box1:hover {
-    background: #1259b0;
+    background: #24a8bc;
     cursor: cell;
     border-color: transparent;
     color: white;

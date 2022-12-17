@@ -21,7 +21,7 @@ const Hospital = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row className='mt-10 mb-10'>
+                <Row className='my-5'>
                     {
                         HospitalFocus.map(treatment => (
                             <HospitalServices key={treatment.id} treatment={treatment} />

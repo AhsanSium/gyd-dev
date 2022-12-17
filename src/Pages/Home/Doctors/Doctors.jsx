@@ -42,13 +42,12 @@ const Doctors = (props) => {
     }, []);
     return (
         <div>
-            <h3 className="mb-5 mt-5">{id && id.toUpperCase()}  Specialist </h3>
             <Row xs={1} md={2} className="g-4">
 
                 <Col md='3'>
 
                     <div className='h-full shadow-lg h-100 py-4 px-2'>
-                        <div>
+                        <div className='mt-5 pt-5'>
                             <h3>Filters</h3>
                             <div className='mt-4'>
                                 <h5>Select Rating</h5>
@@ -89,6 +88,7 @@ const Doctors = (props) => {
 
 
                 <Col md="9">
+                    <h3 className="mb-5 mt-5">{id && id.toUpperCase()}  Specialist </h3>
 
                     {
                         doctors.length > 0 ? doctors.map((singleUser) => {
@@ -98,14 +98,30 @@ const Doctors = (props) => {
 
                                     <Col>
                                         <div className="single-feature-box sigle-doctor">
-                                            <Link to={`/appointment/${singleUser._id}`}>
+                                            <Link className='text-decoration-none' to={`/appointment/${singleUser._id}`}>
                                                 <div className="doctors-profile" data-aos="fade-down">
                                                     <img style={{ width: '13rem' }} src={img} alt="" />
                                                 </div>
                                                 <div className="doctors-info" data-aos="fade-left">
-                                                    <h3 className="mb-0"><a href=".#">{singleUser.doctorName}</a></h3>
+                                                    <h3 className="mb-0"><a href=".#">DR: {singleUser.doctorName}</a></h3>
                                                     <span>Degree: {" " + singleUser.doctorDegree
                                                     }</span>
+                                                    <br />
+                                                    {
+                                                        singleUser.doctorsHospital && singleUser.doctorsHospital &&
+                                                        <span>
+                                                            Hospital: {"  " + singleUser.doctorsHospital.toUpperCase()
+                                                            }</span>
+                                                    }
+                                                    <br />
+                                                    <br />
+                                                    {
+                                                        singleUser.visitHours && singleUser.visitHours &&
+                                                        <span>
+                                                            Visiting Hours: {"  " + singleUser.visitHours.toUpperCase()
+                                                            }</span>
+                                                    }
+                                                    <br />
                                                 </div>
                                             </Link>
 

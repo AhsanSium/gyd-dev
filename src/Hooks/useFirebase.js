@@ -63,28 +63,36 @@ const useFirebase = () => {
 
     const loginUser = (email, password, location, navigate) => {
         setIsLoading(true);
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log("Login User", userCredential.user);
-                console.log("destination: ", location);
-                setUser(userCredential.user);
+        if (location.state?.from === '/admin' && (email !== 'admin@getyourdoctor.com' || password !== 'Test12345')) {
+            coolAlert.error("Admin Credentials Mismatch");
+        }
+        else {
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log("Login User", userCredential.user);
+                    console.log("destination: ", location);
+                    setUser(userCredential.user);
 
-                sessionStorage.setItem("user", JSON.stringify(userCredential.user));
-                // if (user) {
-                // }
-                // else {
-                //     setUser({});
-                // }
-                coolAlert.success('Logged In!');
-                const from = location.state?.from || "/";
-                navigate(from, { replace: true });
-                setAuthError("");
-            })
-            .catch((error) => {
-                coolAlert.error(error.message);
-                setAuthError(error.message);
-            })
-            .finally(() => setIsLoading(false));
+                    sessionStorage.setItem("user", JSON.stringify(userCredential.user));
+                    // if (user) {
+                    // }
+                    // else {
+                    //     setUser({});
+                    // }
+                    coolAlert.success('Logged In!');
+
+                    const from = location.state?.from || "/";
+
+                    navigate(from, { replace: true });
+
+                    setAuthError("");
+                })
+                .catch((error) => {
+                    coolAlert.error(error.message);
+                    setAuthError(error.message);
+                })
+                .finally(() => setIsLoading(false));
+        }
     };
 
 

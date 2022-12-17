@@ -60,6 +60,7 @@ const OnlineDocDetails = () => {
                                                             Doctor Name:
                                                             {"  " + singleUser.doctorName}
                                                         </Card.Text> */}
+
                                                     </Card.Body>
                                                 </Card>
                                             </Link>
